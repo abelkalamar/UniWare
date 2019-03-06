@@ -9,10 +9,13 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  loginURL = 'http://localhost:5000/login';
+  loginURL = 'http://localhost:5000';
 
-  // sendUserDetails(User): Observable<User> {
-  //   return this.http.post<User>(this.loginURL, {
-      
-  //   });
+  login(loginData: FormData) {
+    return this.http.post<FormData>('/login', loginData)
+    .subscribe(data => {
+      return data
+    });
+  }
+
 }
