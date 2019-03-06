@@ -1,7 +1,55 @@
 .container {
-  background-color: #222222;
+  // background-image: url('../../../assets/woods.jpg');
+  background-color: #222222ee;
   height: 95vh;
-  width: 15%;
+  width: 200px;
   color: white;
+  display: flex;
+  flex-direction: column;
 }
+
+.functions {
+  margin: 10px;
+  height: 15%;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.functions button {
+  padding: 5px;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.subjects {
+  margin: 10px;
+  height: 85%;
+}
+
+.subjects .title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 10px 0px 20px 0px;
+  border-bottom: 1px solid white;
+}
+
+.subjects .subject {
+  cursor: pointer;
+  margin: 10px 5px;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.subject:hover {
+  text-decoration: underline;
+}
+
+.subject:active {
+  color: rgb(168, 168, 168);
+}
+
+
 
