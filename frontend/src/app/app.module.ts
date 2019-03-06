@@ -9,13 +9,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ManageSubjectsComponent } from './components/manage-subjects/manage-subjects.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SideBarComponent,
     NavbarComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ManageSubjectsComponent
   ],
   imports: [
     BrowserModule,

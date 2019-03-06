@@ -27,9 +27,11 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('ok');
+    console.log(this.newUser.value);
   }
 
-  goToMainPage() { }
+  goToMainPage() { 
+    this.router.navigate(['/']);
+  }
 
 }

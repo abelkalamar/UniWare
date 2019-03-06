@@ -7,7 +7,7 @@ export class AuthService {
 
   constructor() { }
 
-  registration() {
-    
+  registration(data: FormData) {
+    console.log(data)
   }
 }
