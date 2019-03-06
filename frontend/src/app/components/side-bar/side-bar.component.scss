@@ -2,8 +2,8 @@
   // background-image: url('../../../assets/woods.jpg');
   background-color: #222222ee;
   height: 95vh;
-  width: 200px;
-  color: white;
+  width: 300px;
+  color: rgb(218, 216, 216);
   display: flex;
   flex-direction: column;
 }
@@ -18,10 +18,22 @@
 }
 
 .functions button {
-  padding: 5px;
+  padding: 10px;
   font-size: 15px;
   letter-spacing: 0.1em;
   cursor: pointer;
+  background-color: rgb(218, 216, 216);
+  border: none;
+  border-radius: 5px;
+}
+
+.functions button:hover {
+  background-color: white;
+  box-shadow: -1px 14px 17px -6px rgba(0,0,0,0.75);
+}
+
+.functions button:focus {
+  outline: none;
 }
 
 .subjects {
@@ -33,7 +45,7 @@
   font-size: 24px;
   font-weight: 600;
   margin: 10px 0px 20px 0px;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgb(218, 216, 216);
 }
 
 .subjects .subject {
@@ -45,11 +57,13 @@
 
 .subject:hover {
   text-decoration: underline;
+  color: white;
 }
 
-.subject:active {
-  color: rgb(168, 168, 168);
+.subscriptions {
+  // overflow-y: scroll;
 }
+
 
 
 
