@@ -65,7 +65,15 @@ const postLogin = body => new Promise((resolve, reject) => {
   }
 });
 
+const subscribe = (userId, subjectId) => new Promise((resolve, reject) => {
+  User.findOneAndUpdate({ _id: userId },
+    { $push: { subjects: subjectId } }, { new: true })
+    .then(user => resolve(user))
+    .catch(err => reject(err));
+}); 
+
 module.exports = {
   postUser,
   postLogin,
+  subscribe,
 };
