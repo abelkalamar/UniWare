@@ -2,6 +2,7 @@ require('dotenv').config();
 const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
+const Subject = require('../models/subject');
 
 const postUser = body => new Promise((resolve, reject) => {
   new User({
@@ -68,9 +69,15 @@ const postLogin = body => new Promise((resolve, reject) => {
 const subscribe = (userId, subjectId) => new Promise((resolve, reject) => {
   User.findOneAndUpdate({ _id: userId },
     { $push: { subjects: subjectId } }, { new: true })
-    .then(user => resolve(user))
+    .then(user => {
+      if (user) {
+        Subject.findOneAndUpdate({ _id: subjectId },
+          { $push: { users: userId } }, { new: true })
+          .then(subject => resolve(subject))
+      }
+    })
     .catch(err => reject(err));
-}); 
+});
 
 module.exports = {
   postUser,
