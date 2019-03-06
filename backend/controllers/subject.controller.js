@@ -1,4 +1,5 @@
-const subjectModel = require('../models/subject')
+const subjectModel = require('../models/subject');
+const subjectService = require('../services/subject.services.js')
 
 const getSubjects = (req, res, next) => {
   subjectModel.find()
@@ -28,7 +29,21 @@ const postSubjects = (req, res, next) => {
     .catch(next);
 }
 
+const searchSubjects = (req, res, next) => {
+  const { subject } = req.query;
+  if (subject) {
+    models.searchPost(subject)
+      .then(response => res.status(200).json(response))
+      .catch((err) => {
+        res.status(500).json({
+          error: 'Internal server error'
+        });
+      });
+  }
+});
+
 module.exports = {
   getSubjects,
-  postSubjects
+  postSubjects,
+  searchSubjects
 }
