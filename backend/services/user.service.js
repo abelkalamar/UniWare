@@ -82,7 +82,7 @@ const subscribe = (userId, subjectId) => new Promise((resolve, reject) => {
 const getUserSubjects = userId => new Promise((resolve, reject) => {
   User.findOne({ _id: userId }, { subjects: 1 }).populate({
     path: 'subjects',
-    populate: { path: 'subjects' }
+    populate: { path: 'subjects' },
   })
     .then(usersubjects => resolve(usersubjects))
     .catch(err => reject(err));

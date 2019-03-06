@@ -78,5 +78,5 @@ module.exports = {
   loginController,
   authorizationController,
   subscribeController,
-  userSubjectsController
+  userSubjectsController,
 };
