@@ -25,7 +25,6 @@ jobs:
           command: |
             cd frontend && npm run lint
   jobs:
-  build:
     ...
   deploy:
     docker:
