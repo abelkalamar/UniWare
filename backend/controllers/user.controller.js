@@ -76,7 +76,7 @@ const userSubjectsController = (req, res) => {
 const allUsersController = (req, res) => {
   userService.getAllUsers()
     .then((users) => {
-      res.status(200).json(users)
+      res.status(200).json(users);
     })
     .catch(error => res.status(500).json(error));
 };
@@ -85,10 +85,10 @@ const oneUserController = (req, res) => {
   const { userId } = req.body;
   userService.getUserById(userId)
     .then((user) => {
-      res.status(200).json(user)
+      res.status(200).json(user);
     })
     .catch(error => res.status(500).json(error));
-}
+};
 
 module.exports = {
   registerController,
