@@ -15,7 +15,6 @@ const postSubjects = (req, res, next) => {
   });
   newSubject.save()
     .then((result) => {
-      console.log(result);
       res.status(200)
         .json({
           name: result.name,
@@ -27,11 +26,12 @@ const postSubjects = (req, res, next) => {
 const searchSubjects = (req, res, next) => {
   const { subject } = req.query;
   if (subject) {
-    models.searchPost(subject)
-      .then(response => res.status(200).json(response))
+    subjectService.searchSubject(subject)
+      .then(response => 
+      res.status(200).json(response))
       .catch(next);
   }
-});
+};
 
 module.exports = {
   getSubjects,
