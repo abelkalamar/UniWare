@@ -1,14 +1,14 @@
 const express = require('express');
 const subjectController = require('../controllers/subject.controller');
-
 const userController = require('../controllers/user.controller');
+const auth = require('../middlewares/authorization');
 
 const router = express.Router();
 router.use(express.json());
 
-router.get('/subject', subjectController.getSubjects),
-router.post('/subject', subjectController.postSubjects),
-router.get('/subject/search', subjectController.searchSubjects )
+router.get('/subject', auth.authorizeUser, subjectController.getSubjects),
+router.post('/subject', auth.authorizeUser, subjectController.postSubjects),
+router.get('/subject/search', auth.authorizeUser, subjectController.searchSubjects )
 
 router.post('/register', userController.registerController);
 
