@@ -11,7 +11,7 @@ app.use(cors());
 
 const mongoose = require('mongoose');
 
-mongoose.connect(`mongodb+srv://local-user:${process.env.DB_PASSWORD}@cluster0-udqmy.mongodb.net/tribes?retryWrites=true`,
+mongoose.connect(`mongodb+srv://UniWare:${process.env.DB_PASSWORD}@cluster0-qqnoc.mongodb.net/test?retryWrites=true`,
   {
     useNewUrlParser: true,
     useCreateIndex: true,
