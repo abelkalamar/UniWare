@@ -10,7 +10,7 @@ import { SubjectsService } from 'src/app/services/subjects.service';
 })
 export class SideBarComponent implements OnInit {
 
-  private mySubjects: MockSubjects[]; 
+  private mySubjects: MockSubjects[];
 
   constructor(private service: SubjectsService) { }
 

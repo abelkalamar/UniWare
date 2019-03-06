@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <img class="uniware" src="../../../assets/uniwa.PNG">
+  <img [routerLink]="['/main']" class="uniware" src="../../../assets/uniwa.PNG">
   <div class="input">
     <form [formGroup]='loginData' (ngSubmit)=login()>
       <input formControlName="username" type="text" name="username" placeholder="username">

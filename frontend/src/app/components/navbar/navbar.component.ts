@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
-  login():void {
+  login(): void {
     this.service.login(this.loginData.value);
   }
 
