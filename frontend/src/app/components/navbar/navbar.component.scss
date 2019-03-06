@@ -17,7 +17,19 @@ mat-toolbar {
     border: solid 1px #495057;
     margin: 5px;
     color: white;
+    height: 75%;
+    width: 30%;
   }
-  
-  
+  button{
+    margin: 5px;
+    outline: none;
+    width: 15%;
+  }
+
+  .Login{
+
+    background: none;
+    color: white;
+  }
+
 }
