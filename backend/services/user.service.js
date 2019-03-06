@@ -88,9 +88,16 @@ const getUserSubjects = userId => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
+getAllUsers = () => new Promise((resolve, reject) => {
+  User.find()
+    .then(users => resolve(users))
+    .catch(err => reject(err));
+});
+
 module.exports = {
   postUser,
   postLogin,
   subscribe,
   getUserSubjects,
+  getAllUsers,
 };
