@@ -9,7 +9,8 @@ mat-toolbar {
 
   .uniware {
     height: 100%; 
-    cursor: pointer; 
+    cursor: pointer;
+    outline: none;
   }
 
   input[type="text"], textarea {

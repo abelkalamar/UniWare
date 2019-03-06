@@ -12,13 +12,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
+import { MainComponent } from './components//main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SideBarComponent,
     NavbarComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
