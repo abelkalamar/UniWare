@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:8.12.0-browsers
+      - image: buildpack-deps:trusty
     
     working_directory: ~/repo
 
@@ -24,13 +25,6 @@ jobs:
           name: Frontend Lint
           command: |
             cd frontend && npm run lint
-  jobs:
-    ...
-  deploy:
-    docker:
-      - image: buildpack-deps:trusty
-    steps:
-      - checkout
       - run:
           name: Deploy Master to Heroku
           command: |
