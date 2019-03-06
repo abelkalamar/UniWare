@@ -79,8 +79,18 @@ const subscribe = (userId, subjectId) => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
+const getUserSubjects = userId => new Promise((resolve, reject) => {
+  User.findOne({ _id: userId }, { subjects: 1 }).populate({
+    path: 'subjects',
+    populate: { path: 'subjects' }
+  })
+    .then(usersubjects => resolve(usersubjects))
+    .catch(err => reject(err));
+});
+
 module.exports = {
   postUser,
   postLogin,
   subscribe,
+  getUserSubjects,
 };

@@ -12,4 +12,6 @@ router.post('/login', userController.loginController);
 
 router.post('/subscribe', auth.authorizeUser, userController.subscribeController);
 
+router.get('/usersubjects', auth.authorizeUser, userController.userSubjectsController);
+
 module.exports = router;

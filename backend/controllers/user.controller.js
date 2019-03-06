@@ -64,9 +64,19 @@ const subscribeController = (req, res) => {
     .catch(error => res.status(500).json(error));
 };
 
+const userSubjectsController = (req, res) => {
+  const { userId } = req.decoded;
+  userService.getUserSubjects(userId)
+    .then((subjects) => {
+      res.status(200).json(subjects);
+    })
+    .catch(error => res.status(500).json(error));
+};
+
 module.exports = {
   registerController,
   loginController,
   authorizationController,
   subscribeController,
+  userSubjectsController
 };
