@@ -34,11 +34,7 @@ const searchSubjects = (req, res, next) => {
   if (subject) {
     models.searchPost(subject)
       .then(response => res.status(200).json(response))
-      .catch((err) => {
-        res.status(500).json({
-          error: 'Internal server error'
-        });
-      });
+      .catch(next);
   }
 });
 
