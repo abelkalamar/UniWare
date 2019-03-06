@@ -5,17 +5,19 @@ const { Schema } = mongoose;
 const schema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   exp: {
     type: Number,
-    required: true, 
-    default: 0
+    required: true,
+    default: 0,
   },
   users:
-  [{ type: Schema.Types.ObjectId,
-     ref: 'user' },
-    ],
+  [{
+    type: Schema.Types.ObjectId,
+    ref: 'user',
+  },
+  ],
 });
 
 module.exports = mongoose.model('Subject', schema);

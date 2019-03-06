@@ -69,11 +69,11 @@ const postLogin = body => new Promise((resolve, reject) => {
 const subscribe = (userId, subjectId) => new Promise((resolve, reject) => {
   User.findOneAndUpdate({ _id: userId },
     { $push: { subjects: subjectId } }, { new: true })
-    .then(user => {
+    .then((user) => {
       if (user) {
         Subject.findOneAndUpdate({ _id: subjectId },
           { $push: { users: userId } }, { new: true })
-          .then(subject => resolve(subject))
+          .then(subject => resolve(subject));
       }
     })
     .catch(err => reject(err));
