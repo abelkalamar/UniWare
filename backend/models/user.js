@@ -20,7 +20,6 @@ const user = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'subject',
   }],
-  default: [],
   exp: {
     type: Number,
     default: 0,
