@@ -81,6 +81,15 @@ const allUsersController = (req, res) => {
     .catch(error => res.status(500).json(error));
 };
 
+const oneUserController = (req, res) => {
+  const { userId } = req.body;
+  userService.getUserById(userId)
+    .then((user) => {
+      res.status(200).json(user)
+    })
+    .catch(error => res.status(500).json(error));
+}
+
 module.exports = {
   registerController,
   loginController,
@@ -88,4 +97,5 @@ module.exports = {
   subscribeController,
   userSubjectsController,
   allUsersController,
+  oneUserController,
 };
