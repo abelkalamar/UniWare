@@ -16,7 +16,7 @@ const registerController = (req, res) => {
     userService.postUser(req.body)
       .then((user) => {
         res.status(200).json({
-          message: 'Successfully registered!',
+          message: `${user.username} has successfully registered!`,
         });
       })
       .catch((err) => {

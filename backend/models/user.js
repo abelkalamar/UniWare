@@ -27,7 +27,7 @@ const user = new Schema({
   level: {
     type: Number,
     default: 1,
-  }
+  },
 });
 
 module.exports = mongoose.model('user', user);
