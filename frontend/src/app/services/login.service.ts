@@ -9,12 +9,13 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  loginURL = 'http://localhost:5000';
+  loginURL = 'http://localhost:3000';
 
   login(loginData: FormData) {
-    return this.http.post<FormData>('/login', loginData)
+    return this.http.post<any>(`${this.loginURL}/login`, loginData)
     .subscribe(data => {
-      return data
+      console.log(data);
+      localStorage.setItem('jwtToken', data.token);
     });
   }
 
