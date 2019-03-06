@@ -10,12 +10,13 @@ const schema = new Schema({
   },
   exp: {
     type: Number,
-    required: true
+    required: true, 
+    default: 0
   },
   users:
   [{ type: Schema.Types.ObjectId,
-     ref: 'User' }],
-     required: true
+     ref: 'User' },
+    ],
 });
 
 module.exports = mongoose.model('Subject', schema);
