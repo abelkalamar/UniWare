@@ -17,6 +17,12 @@ mongoose.connect(`mongodb+srv://UniWare:${process.env.DB_PASSWORD}@cluster0-qqno
     useCreateIndex: true,
   });
 
+mongoose.connection.once('open', () => {
+  console.log('Connection has been made!');
+}).on('error', (error) => {
+  console.log('Connection error:', error.message);
+});
+
 app.use(express.json());
 
 const services = require('./routes/index');

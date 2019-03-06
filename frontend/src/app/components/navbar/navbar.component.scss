@@ -12,7 +12,7 @@ mat-toolbar {
     cursor: pointer; 
   }
 
-  input[type="text"], textarea {
+  input[type="text"],[type="password"] {
     background-color : #495057;
     border: solid 1px #495057;
     margin: 5px;
@@ -20,6 +20,7 @@ mat-toolbar {
     width: 30%;
     border-radius: 4px;
     outline: none;
+    padding: 5px;
   }
 
   input::placeholder{
@@ -29,14 +30,18 @@ mat-toolbar {
     margin: 5px;
     outline: none;
     width: 15%;
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
   }
 
   .Login{
     background: none;
     color: white;
     overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
 }
