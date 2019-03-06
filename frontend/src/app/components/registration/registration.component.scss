@@ -1,0 +1,87 @@
+.container {
+  width: 80%;
+  height: 90%;
+  margin-left: 20%;
+  position: fixed;
+  display: flex;
+  padding: 50px;
+  align-items: center;
+}
+
+.content {
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #505050;
+}
+
+.register {
+  margin: 20px;
+  color: #505050;
+  font-size: 22px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"] {
+  padding: 5px;
+  letter-spacing: 0.1em;
+  width: 400px;
+  font-size: 18px;  
+  border: none;
+  border-bottom: 1px solid #505050;
+  margin: 20px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.upload, .footer button {
+  padding: 10px;
+  font-size: 15px;
+  max-width: 130px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.upload {
+  margin: 30px auto;
+  background-color: rgb(167, 167, 167);
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer button {
+  margin-right: 20px;
+}
+
+label {
+  margin-top: 20px;
+}
+
+.upload:hover,
+.footer button:hover {
+  background-color: rgb(226, 224, 224);
+}
+
+.upload:focus,
+.footer button:focus {
+  outline: none;
+}
