@@ -11,9 +11,8 @@ export class LoginService {
 
   loginURL = 'http://localhost:5000/login';
 
-  sendUserDetails(User): Observable<User> {
-    return this.http.post<User>(this.loginURL, {
+  // sendUserDetails(User): Observable<User> {
+  //   return this.http.post<User>(this.loginURL, {
       
-    });
-
+  //   });
 }
