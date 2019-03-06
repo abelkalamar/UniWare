@@ -17,7 +17,26 @@ mat-toolbar {
     border: solid 1px #495057;
     margin: 5px;
     color: white;
+    width: 30%;
+    border-radius: 4px;
+    outline: none;
   }
-  
-  
+
+  input::placeholder{
+    padding:5px;
+  }
+  button{
+    margin: 5px;
+    outline: none;
+    width: 15%;
+  }
+
+  .Login{
+    background: none;
+    color: white;
+    overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  }
+
 }
