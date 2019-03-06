@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -8,7 +9,11 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  LoginURL = 'http://localhost:5000/login';
+  loginURL = 'http://localhost:5000/login';
+
+  sendUserDetails(User): Observable<User> {
+    return this.http.post<User>(this.loginURL, {
+      
+    });
 
 }
-
