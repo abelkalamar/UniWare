@@ -1,0 +1,23 @@
+mat-toolbar {
+  background-color:black;
+  display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  justify-content: space-between;
+  height: 10%;
+
+  .uniware {
+    height: 100%; 
+    cursor: pointer; 
+  }
+
+  input[type="text"], textarea {
+    background-color : #495057;
+    border: solid 1px #495057;
+    margin: 5px;
+    color: white;
+  }
+  
+  
+}
