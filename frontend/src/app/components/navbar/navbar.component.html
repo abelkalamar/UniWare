@@ -1,10 +1,12 @@
 <mat-toolbar>
-  <img class="uniware" src="../../../assets/uniwa.PNG">
+  <img [routerLink]="['/main']" class="uniware" src="../../../assets/uniwa.PNG">
   <div class="input">
-    <input type="text" name="username" placeholder="username" id="">
-    <input type="text" name="password" placeholder="password" id=""> 
-    <button class="Login">Login</button>
-    <button class="Login">Sign In</button>
+    <form [formGroup]='loginData' (ngSubmit)=login()>
+      <input formControlName="username" type="text" name="username" placeholder="username">
+      <input formControlName="password" type="password" name="password" placeholder="password">
+      <button type="submit" class="Login">Login</button>
+      <button type="button" class="Login">Sign Up</button>
+    </form>
   </div>
 
 </mat-toolbar>

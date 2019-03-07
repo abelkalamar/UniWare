@@ -1,7 +1,7 @@
 const express = require('express');
 const subjectController = require('../controllers/subject.controller');
-const userController = require('../controllers/user.controller');
 const auth = require('../middlewares/authorization');
+const userController = require('../controllers/user.controller');
 const multer = require('multer');
 
 const storage = multer.diskStorage({
@@ -27,5 +27,15 @@ router.get('/subject/file', auth.authorizeUser, subjectController.downloadFiles)
 router.post('/register', userController.registerController);
 
 router.post('/login', userController.loginController);
+
+router.post('/subscribe', auth.authorizeUser, userController.subscribeController);
+
+router.get('/usersubjects', auth.authorizeUser, userController.userSubjectsController);
+
+router.get('/users', auth.authorizeUser, userController.allUsersController);
+
+router.get('/auth', auth.authorizeUser, userController.authorizationController);
+
+router.post('/user', auth.authorizeUser, userController.oneUserController);
 
 module.exports = router;
