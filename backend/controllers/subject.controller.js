@@ -1,20 +1,22 @@
-const subjectModel = require('../models/subject');
+const subject = require('../models/subject');
 const fileModel = require('../models/file');
 const subjectService = require('../services/subject.services.js');
 
 const getSubjects = (req, res, next) => {
-  subjectModel.find()
+  subject.find()
     .then(subjects => res.status(200).json(subjects))
     .catch(next);
 }
 
-const getAllSubjects = () => {
-  subjectModel.find
-}
+const getAllSubjects = () => new Promise((resolve, reject) => {
+  subject.find()
+    .then(subjects => resolve(subjects))
+    .catch(err => reject(err));
+});
 
 const postSubjects = (req, res, next) => {
   const { name, exp } = req.body;
-  const newSubject = new subjectModel({
+  const newSubject = new subject({
     name,
     exp,
   });

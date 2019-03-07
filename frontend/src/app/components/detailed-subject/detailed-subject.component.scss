@@ -39,7 +39,8 @@
   border: 1px solid black;
 }
 
-.tabs span:hover {
+.tabs span:hover,
+.file:hover {
   background: #cfcfcf;
 }
 
@@ -61,8 +62,10 @@
 .file{
   font-size: 18px;
   font-weight: 600;
-  margin: 10px;
   cursor: pointer;
+  width: 100%;
+  border-bottom: 1px solid black;
+  padding: 10px;
 }
 
 .footer button {
@@ -90,7 +93,7 @@ label {
 
 .upload:hover,
 .footer button:hover {
-  background-color: rgb(226, 224, 224);
+  background-color: rgb(175, 175, 175);
 }
 
 .upload:focus,

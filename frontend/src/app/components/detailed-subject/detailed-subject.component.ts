@@ -41,4 +41,14 @@ export class DetailedSubjectComponent implements OnInit {
     this.router.navigate(['/main']);
   }
 
+  downloadFile(event) {
+    let requiredFile: MockFiles;
+    this.files.forEach(file => {
+      if (file.name === event.target.textContent.trim()) {
+        requiredFile = file;
+      }
+    });
+    console.log(requiredFile);
+  };
 }
+

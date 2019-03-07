@@ -7,7 +7,7 @@
       <span (click)="selectType($event)" class="exam">exam</span>
     </div>
     <div class="files">
-      <div *ngFor='let file of files' class="file">
+      <div *ngFor='let file of files' (click)="downloadFile($event)" class="file">
         {{file.name}}
       </div>
     </div>

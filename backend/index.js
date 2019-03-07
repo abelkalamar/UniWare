@@ -5,6 +5,7 @@ const express = require('express');
 
 const app = express();
 const cors = require('cors');
+app.use(cors());
 
 app.use(express.static('./dist'));
 
@@ -13,7 +14,6 @@ app.get('/*', function(req,res) {
   res.sendFile(path.join(__dirname,'./dist/index.html'));
 });
 
-app.use(cors());
 
 const mongoose = require('mongoose');
 
