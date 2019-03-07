@@ -29,8 +29,8 @@ const searchSubjects = (req, res, next) => {
   const { subject } = req.query;
   if (subject) {
     subjectService.searchSubject(subject)
-      .then(response => 
-      res.status(200).json(response))
+      .then(response =>
+        res.status(200).json(response))
       .catch(next);
   }
 };
@@ -46,28 +46,27 @@ const postFiles = (req, res, next) => {
   newFile.save()
     .then((result) => {
       res.status(200).json({
-          message: 'Successfully saved'
-        });
+        message: 'Successfully saved'
+      });
     })
     .catch(next);
 }
 
 const downloadFiles = (req, res, next) => {
   const { fileId } = req.query;
-  if(fileId){
-  subjectService.findFile(fileId)
-    .then(files => 
-    res.status(200).download(`${files.path.substring(21)}`)
-    )
-    .catch(next);
+  if (fileId) {
+    subjectService.findFile(fileId)
+      .then(files =>
+        res.status(200).download(`${files.path.substring(22)}`)
+      )
+      .catch(next);
   }
 }
-
 
 module.exports = {
   getSubjects,
   postSubjects,
   searchSubjects,
-  postFiles, 
+  postFiles,
   downloadFiles
 }
