@@ -22,7 +22,7 @@ export class SideBarComponent implements OnInit {
   }
 
   goToManageSubjects() {
-    this.router.navigate(['/manage'])
+    this.router.navigate(['/manage']);
   }
 
   getMySubjects() {

@@ -10,8 +10,8 @@ import { MockSubjects } from 'src/app/mock-files/subjects_class';
 })
 export class ManageSubjectsComponent implements OnInit {
 
-  private subjects: MockSubjects[] = [];
-  private selectedSubjects: MockSubjects[] = [];
+   subjects: MockSubjects[] = [];
+   selectedSubjects: MockSubjects[] = [];
 
   constructor(
     private router: Router,
@@ -35,7 +35,7 @@ export class ManageSubjectsComponent implements OnInit {
 
   chooseSubject(subjectName: string): void {
     this.subjects.forEach((e, i) => {
-      if (e.name == subjectName) {
+      if (e.name === subjectName) {
         this.selectedSubjects.push(e);
         this.subjects.splice(i, 1);
       }
@@ -44,7 +44,7 @@ export class ManageSubjectsComponent implements OnInit {
 
   removeSubject(subjectName: string): void {
     this.selectedSubjects.forEach((e, i) => {
-      if (e.name == subjectName) {
+      if (e.name === subjectName) {
         this.subjects.push(e);
         this.selectedSubjects.splice(i, 1);
       }
