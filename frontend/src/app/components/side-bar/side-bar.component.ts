@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class SideBarComponent implements OnInit {
 
-  private mySubjects: MockSubjects[];
+  mySubjects: MockSubjects[];
 
   constructor(
     private service: SubjectsService,
