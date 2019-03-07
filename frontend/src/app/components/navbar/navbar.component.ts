@@ -35,10 +35,17 @@ export class NavbarComponent implements OnInit {
         this.currentUser = data.user;
         console.log(this.currentUser);
       });
+    this.loginData.reset();
   }
 
   goToRegister() {
     this.router.navigate(['/register']);
+  }
+
+  logOut() {
+    localStorage.removeItem('jwtToken');
+    this.currentUser = null;
+    this.router.navigate(['/main']);
   }
 
 }

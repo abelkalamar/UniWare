@@ -1,11 +1,16 @@
 <mat-toolbar>
   <img [routerLink]="['/main']" class="uniware" src="../../../assets/uniwa.PNG">
   <div class="input">
-    <form [formGroup]='loginData' (ngSubmit)=login()>
+    <form *ngIf='!currentUser' [formGroup]='loginData' (ngSubmit)=login()>
       <input formControlName="username" type="text" name="username" placeholder="username">
       <input formControlName="password" type="password" name="password" placeholder="password">
       <button type="submit" class="Login">Login</button>
       <button type="button" (click)="goToRegister()" class="Login">Sign Up</button>
     </form>
+    <div *ngIf='currentUser' class="loggedInUser">
+      <img [src]='currentUser.profilePicture' alt="">
+      <span class="username" >{{currentUser.username}}</span>
+      <button type="button" (click)="logOut()" class="logout">Logout</button>
+    </div>
   </div>
 </mat-toolbar>

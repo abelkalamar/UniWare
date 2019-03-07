@@ -27,4 +27,9 @@ export class SubjectsService {
     // });
     // return this.http.get<any>(`${this.baseURL}/subject`, { headers });
   }
+
+  sendSubjects(subjectIds: String[]) {
+    console.log(subjectIds);
+    return this.http.post(`${this.baseURL}/subscribe`, subjectIds);
+  }
 }

@@ -52,4 +52,14 @@ export class ManageSubjectsComponent implements OnInit {
     });
   }
 
+  sendSubjects() {
+    const subjectIds = this.selectedSubjects.map(e => {
+      return e.id;
+    });
+    this.service.sendSubjects(subjectIds)
+      .subscribe(response => {
+        console.log(response);
+      });
+  }
+
 }
