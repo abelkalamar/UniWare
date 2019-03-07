@@ -25,6 +25,10 @@ jobs:
           name: Frontend Lint
           command: |
             cd frontend && npm run lint
+      - run: 
+          name: Frontend Build
+          command: |
+            cd frontend && ng build
       - run:
           name: Deploy Dev to Heroku
           command: |
