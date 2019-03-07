@@ -4,11 +4,11 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const Subject = require('../models/subject');
 
-const postUser = body => new Promise((resolve, reject) => {
+const postUser = req => new Promise((resolve, reject) => {
   new User({
-    username: body.username,
-    password: crypto.pbkdf2Sync(body.password, process.env.salt, 100, 512, 'sha512').toString('hex'),
-    profilePicture: body.profilePicture,
+    username: req.body.username,
+    password: crypto.pbkdf2Sync(req.body.password, process.env.salt, 100, 512, 'sha512').toString('hex'),
+    profilePicture: `http://localhost:3000/${req.file.path}`,
   })
     .save((error, user) => {
       if (error) {
@@ -42,6 +42,7 @@ const postLogin = body => new Promise((resolve, reject) => {
           resolve({
             status: 'ok',
             token,
+            user: user
           });
         } else {
           resolve({

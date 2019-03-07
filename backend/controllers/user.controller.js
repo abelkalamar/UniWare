@@ -1,8 +1,9 @@
 const userService = require('../services/user.service');
 
 const registerController = (req, res) => {
-  const { username, password, profilePicture } = req.body;
-  if (!username || !password || !profilePicture) {
+  const { username, password } = req.body;
+  console.log(req.body);
+  if (!username || !password) {
     res.status(400).json({
       status: 'error',
       message: 'Missing parameters!',
@@ -13,7 +14,7 @@ const registerController = (req, res) => {
       message: 'Password must be at least 8 characters!',
     });
   } else {
-    userService.postUser(req.body)
+    userService.postUser(req)
       .then((user) => {
         res.status(200).json({
           message: `${user.username} has successfully registered!`,

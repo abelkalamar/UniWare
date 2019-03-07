@@ -1,12 +1,24 @@
 const express = require('express');
-
 const auth = require('../middlewares/authorization');
+const multer = require('multer');
+
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'static');
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  }
+});
+
+const upload = multer({ storage: storage });
 
 const userController = require('../controllers/user.controller');
 
 const router = express.Router();
 
-router.post('/register', userController.registerController);
+router.post('/register', upload.single('profilePicture'), userController.registerController);
 
 router.post('/login', userController.loginController);
 
