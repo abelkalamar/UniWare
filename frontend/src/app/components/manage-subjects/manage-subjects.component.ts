@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SubjectsService } from 'src/app/services/subjects.service';
-import { MockSubjects } from 'src/app/mock-files/subjects_class';
+import { SubjectsService } from '../../services/subjects.service';
+import { MockSubjects } from '../../mock-files/subjects_class';
 
 @Component({
   selector: 'app-manage-subjects',

@@ -19,6 +19,6 @@ export class SubjectsService {
   }
 
   getSubjects () {
-    // return this.http.get<any>(`${this.baseURL}/login`, loginData);
+    return this.http.get<any>(`${this.baseURL}/login`);
   }
 }
