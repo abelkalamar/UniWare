@@ -28,7 +28,7 @@ jobs:
       - run: 
           name: Frontend Build
           command: |
-            cd frontend && ng build --aot --prod
+            cd frontend && ng build
       - run:
           name: Deploy Dev to Heroku
           command: |
