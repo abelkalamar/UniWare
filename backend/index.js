@@ -18,6 +18,7 @@ mongoose.connect(`mongodb+srv://UniWare:${process.env.DB_PASSWORD}@cluster0-qqno
   });
 
 app.use(express.json());
+app.use('/static', express.static('static'))
 
 const services = require('./routes/index');
 

@@ -7,12 +7,13 @@ const schema = new Schema({
     type: String,
     required: true
   },
-  url: {
+  path: {
     type: String,
     required: true
   },
   type: {
     type: String,
+    enum: ['homework', 'lecture', 'exam'],
     required: true
   },
   subject_id:
