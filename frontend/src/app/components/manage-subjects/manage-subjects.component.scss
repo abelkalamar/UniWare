@@ -1,15 +1,20 @@
 .container {
   width: 80%;
   height: 90%;
-  margin-left: 20%;
+  left: 20%;
+  top: 72px;
   position: fixed;
   display: flex;
-  padding: 50px;
   align-items: center;
 }
 
 .content {
   margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
 
 .title {
@@ -17,6 +22,57 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   color: #505050;
+}
+
+.lists {
+  display: flex;
+}
+
+.subjectForm {
+  width: 50vh;
+}
+
+.allSubjects, .selectedSubjects{
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px 20px;
+  min-width: 400px;
+  max-height: 450px;
+  margin: 0px auto;
+  overflow-y: scroll;
+  cursor: pointer;
+}
+
+
+.allSubjects {
+  margin-right: 50px;
+}
+
+.allSubjects::-webkit-scrollbar,
+.selectedSubjects::-webkit-scrollbar {
+  width: 1em;
+}
+
+.subject {
+  display: flex;
+  margin: 5px;
+  justify-content: space-between;
+}
+
+.subject:hover {
+  border-bottom: 1px solid black;
+}
+
+.subject input{
+  margin-right: 20px;
+}
+
+.subjectName, .subjectExp {
+  font-weight: 600;
+}
+
+.subjectName {
+  margin-right: 30px;
 }
 
 .footer button {
@@ -31,11 +87,11 @@
 
 .footer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .footer button {
-  margin-right: 20px;
+  margin: 20px 50px 0px 0px;
 }
 
 label {
@@ -51,3 +107,4 @@ label {
 .footer button:focus {
   outline: none;
 }
+

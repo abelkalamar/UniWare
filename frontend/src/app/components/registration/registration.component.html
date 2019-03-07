@@ -1,7 +1,7 @@
 <div class="container">
   <div class="content">
     <p class="title">CREATE ACCOUNT</p>
-    <form class="register" [formGroup]='newUser' action="POST" (ngSubmit)="onSubmit()">
+    <form class="register" [formGroup]='newUser' (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label>Username</label>
         <input formControlName="username" type="text" >

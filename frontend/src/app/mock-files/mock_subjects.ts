@@ -30,11 +30,5 @@ export const mock_subjects: MockSubjects[] = [
     name: 'Fizika',
     exp: 420,
     subscriptedUsers: []
-  },
-  {
-    id: 'asdgb324',
-    name: 'Analízis 1 informatikusoknak',
-    exp: 300,
-    subscriptedUsers: []
   }
 ];

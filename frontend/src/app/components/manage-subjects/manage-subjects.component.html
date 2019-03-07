@@ -1,8 +1,19 @@
 <div class="container">
   <div class="content">
     <p class="title">Manage my subjects</p>
-    <div class="subjectsBox">
-
+    <div class="lists">
+      <div class="allSubjects">
+        <div *ngFor='let subject of subjects' (click)="chooseSubject(subj.innerText)" class="subject">
+          <span #subj class="subjectName">{{subject.name}}</span>
+          <span class="subjectExp">{{subject.exp}}XP</span>
+        </div>
+      </div>
+      <div class="selectedSubjects">
+          <div *ngFor='let mySubject of selectedSubjects' (click)="removeSubject(mySubj.innerText)" class="subject">
+            <span #mySubj class="subjectName">{{mySubject.name}}</span>
+            <span class="subjectExp">{{mySubject.exp}}XP</span>
+          </div>
+        </div>
     </div>
     <div class="footer">
       <button class="back" (click)="goToMainPage()" type="button">Back</button>

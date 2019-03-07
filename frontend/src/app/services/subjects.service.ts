@@ -11,4 +11,8 @@ export class SubjectsService {
   getSubsciptedSubjects () {
     return mock_subjects;
   }
+
+  getSubjects () {
+    return mock_subjects;
+  }
 }
