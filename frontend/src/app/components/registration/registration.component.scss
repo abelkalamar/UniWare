@@ -2,6 +2,7 @@
   width: 80%;
   height: 90%;
   margin-left: 20%;
+  margin-top: 72px;
   position: fixed;
   display: flex;
   padding: 50px;
@@ -39,7 +40,6 @@ input[type="text"],[type="password"] {
   border-bottom: 1px solid #505050;
   margin: 20px;
 }
-
 
 input[type="text"],[type="password"]:focus {
   outline: none;

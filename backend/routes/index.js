@@ -18,13 +18,17 @@ const upload = multer({ storage: storage });
 const router = express.Router();
 router.use(express.json());
 
-router.get('/subject', auth.authorizeUser, subjectController.getSubjects),
-router.post('/subject', auth.authorizeUser, subjectController.postSubjects),
-router.get('/subject/search', auth.authorizeUser, subjectController.searchSubjects ),
-router.post('/subject/file', auth.authorizeUser, upload.single('path'), subjectController.postFiles),
-router.get('/subject/file', auth.authorizeUser, subjectController.downloadFiles),
+router.get('/subject', auth.authorizeUser, subjectController.getSubjects);
 
-router.post('/register', userController.registerController);
+router.post('/subject', auth.authorizeUser, subjectController.postSubjects);
+
+router.get('/subject/search', auth.authorizeUser, subjectController.searchSubjects );
+
+router.post('/subject/file', auth.authorizeUser, upload.single('path'), subjectController.postFiles);
+
+router.get('/subject/file', auth.authorizeUser, subjectController.downloadFiles);
+
+router.post('/register', upload.single('profilePicture'), userController.registerController);
 
 router.post('/login', userController.loginController);
 
