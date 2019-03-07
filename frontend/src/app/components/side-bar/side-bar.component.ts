@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class SideBarComponent implements OnInit {
 
   mySubjects: MockSubjects[];
+  pickedSubject: MockSubjects;
 
   constructor(
     private service: SubjectsService,
@@ -27,5 +28,15 @@ export class SideBarComponent implements OnInit {
 
   getMySubjects() {
     this.mySubjects = this.service.getSubsciptedSubjects();
+  }
+
+  showDetails(event) {
+    this.mySubjects.forEach(e => {
+      if(e.name === event.target.innerText) {
+        this.pickedSubject = e;
+      }
+    });
+    this.service.sendPickedSubject(this.pickedSubject);
+    this.router.navigate(['/subject']);
   }
 }

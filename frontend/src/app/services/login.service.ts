@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -9,6 +9,8 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class LoginService {
+
+  @Output() public getAllSubjects = new EventEmitter;
 
   constructor(
     private http: HttpClient,

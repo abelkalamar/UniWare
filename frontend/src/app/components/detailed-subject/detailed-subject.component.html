@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="content">
+    <p class="title">{{pickedSubject.name}}</p>
+    <div class="tabs">
+      <span (click)="selectType($event)" class="lecture">lecture</span>
+      <span (click)="selectType($event)" class="homework">homework</span>
+      <span (click)="selectType($event)" class="exam">exam</span>
+    </div>
+    <div class="files">
+      <div *ngFor='let file of files' class="file">
+        {{file.name}}
+      </div>
+    </div>
+    <div class="footer">
+      <button class="back" (click)="goToMainPage()" type="button">Back</button>
+      <button class="submit" type="submit">Add</button>
+    </div>
+  </div>
+</div>

@@ -1,9 +1,8 @@
-export abstract class MockUser {
+export abstract class MockUsers {
   username: String;
-  profilePicture: Number;
   password: String;
+  profilePicture: String;
   subjects: String[];
   exp: Number;
-  _id?: Number;
   level: Number;
 }

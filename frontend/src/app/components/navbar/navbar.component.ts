@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { MockUser } from 'src/app/mock-files/user_class';
+import { MockUsers } from 'src/app/mock-files/user_class';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +11,9 @@ import { MockUser } from 'src/app/mock-files/user_class';
 })
 export class NavbarComponent implements OnInit {
 
-  private currentUser: MockUser = null;
+  private currentUser: MockUsers = null;
+
+  @Output() public sendMySubjects = new EventEmitter();
 
   constructor(
     private fb: FormBuilder,
@@ -31,9 +33,10 @@ export class NavbarComponent implements OnInit {
     this.service.login(this.loginData.value)
       .subscribe(data => {
         localStorage.setItem('jwtToken', data.token);
-        this.router.navigate(['/main'])
         this.currentUser = data.user;
+        this.sendMySubjects.emit(data.user.subjects);
         console.log(this.currentUser);
+        this.router.navigate(['/main'])
       });
     this.loginData.reset();
   }
@@ -47,5 +50,7 @@ export class NavbarComponent implements OnInit {
     this.currentUser = null;
     this.router.navigate(['/main']);
   }
+
+
 
 }

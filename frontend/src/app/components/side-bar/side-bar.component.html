@@ -7,7 +7,7 @@
       <p class="title">My Subjects</p>
       <div class="subscriptions">
         <div *ngFor='let sideSubj of mySubjects'>
-          <p class="subject">{{sideSubj.name}}</p>
+          <p (click)="showDetails($event)" class="subject">{{sideSubj.name}}</p>
         </div>
       </div>
     </div>

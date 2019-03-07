@@ -1,5 +1,5 @@
 export abstract class MockSubjects {
-  id: String;
+  id?: String;
   name: String;
   exp: Number;
   subscriptedUsers: String[];

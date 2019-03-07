@@ -98,13 +98,13 @@ export const mock_subjects: MockSubjects[] = [
     subscriptedUsers: []
   },
   {
-    id: 'gtfh6744g',
+    id: 'adsfasffff',
     name: 'Mobil és webes szoftverek',
     exp: 310,
     subscriptedUsers: []
   },
   {
-    id: 'rtth45h',
+    id: '44535zhh',
     name: 'Mesterséges intelligencia',
     exp: 560,
     subscriptedUsers: []

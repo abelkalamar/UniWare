@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MainComponent } from './components//main/main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ManageSubjectsComponent } from './components/manage-subjects/manage-subjects.component';
+import { DetailedSubjectComponent } from './components/detailed-subject/detailed-subject.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ManageSubjectsComponent } from './components/manage-subjects/manage-sub
     NavbarComponent,
     RegistrationComponent,
     ManageSubjectsComponent,
-    MainComponent
+    MainComponent,
+    DetailedSubjectComponent
   ],
   imports: [
     BrowserModule,
