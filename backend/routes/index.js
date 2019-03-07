@@ -18,11 +18,23 @@ const upload = multer({ storage: storage });
 const router = express.Router();
 router.use(express.json());
 
-router.get('/subject', auth.authorizeUser, subjectController.getSubjects);
+router.get('/subject', auth.authorizeUser, (req, res) => {
+  console.log(req.headers);
+  console.log('ok');
+  subjectController.getAllSubjects()
+    .then(response => {
+      res.status(200).json(response);
+    })
+    .catch(err => {
+      res.status(500).json({
+        error: err.message
+      });
+    });
+  });
 
 router.post('/subject', auth.authorizeUser, subjectController.postSubjects);
 
-router.get('/subject/search', auth.authorizeUser, subjectController.searchSubjects );
+router.get('/subject/search', auth.authorizeUser, subjectController.searchSubjects);
 
 router.post('/subject/file', auth.authorizeUser, upload.single('path'), subjectController.postFiles);
 

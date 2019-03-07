@@ -2,11 +2,14 @@ const subjectModel = require('../models/subject');
 const fileModel = require('../models/file');
 const subjectService = require('../services/subject.services.js');
 
-
 const getSubjects = (req, res, next) => {
   subjectModel.find()
     .then(subjects => res.status(200).json(subjects))
     .catch(next);
+}
+
+const getAllSubjects = () => {
+  subjectModel.find
 }
 
 const postSubjects = (req, res, next) => {
@@ -68,5 +71,6 @@ module.exports = {
   postSubjects,
   searchSubjects,
   postFiles,
-  downloadFiles
+  downloadFiles,
+  getAllSubjects
 }

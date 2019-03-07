@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const authorizeUser = (req, res, next) => {
   const uniWareToken = req.headers['uniware-token'];
   if (uniWareToken) {
-    const token = uniWareToken.split(' ')[1];
+    // const token = uniWareToken.split(' ')[1];
     jwt.verify(token, process.env.JWT_KEY, (err, decoded) => {
       if (err) {
         res.status(401).json({ status: 'error', message: 'Invalid token!' });
