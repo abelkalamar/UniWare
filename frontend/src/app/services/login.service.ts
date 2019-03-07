@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { MockUsers } from '../mock-files/user_class';
 
 
 @Injectable({
@@ -10,7 +11,7 @@ import { environment } from '../../environments/environment';
 })
 export class LoginService {
 
-  @Output() public getAllSubjects = new EventEmitter;
+  @Output() public sendCurrentUser = new EventEmitter;
 
   constructor(
     private http: HttpClient,
@@ -22,5 +23,14 @@ export class LoginService {
   login(loginData: FormData): Observable<any> {
     return this.http.post<any>(`${this.baseURL}/login`, loginData);
   }
+
+  getUser (user) {
+    this.sendCurrentUser.emit(user);
+  }
+
+  sendUser() {
+    return this.sendCurrentUser;
+  }
+
 
 }

@@ -7,14 +7,6 @@ const app = express();
 const cors = require('cors');
 app.use(cors());
 
-app.use(express.static('./dist'));
-
-app.get('/*', function(req,res) {
-    
-  res.sendFile(path.join(__dirname,'./dist/index.html'));
-});
-
-
 const mongoose = require('mongoose');
 
 mongoose.connect(`mongodb+srv://UniWare:${process.env.DB_PASSWORD}@cluster0-qqnoc.mongodb.net/uni`,
@@ -31,6 +23,13 @@ mongoose.connection.once('open', () => {
 
 app.use(express.json());
 app.use('/static', express.static('static'));
+
+app.use(express.static('./dist'));
+
+app.get('/', function(req,res) {
+    
+  res.sendFile(path.join(__dirname,'./dist/index.html'));
+});
 
 const services = require('./routes/index');
 

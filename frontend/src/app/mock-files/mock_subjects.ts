@@ -5,7 +5,7 @@ export const mock_subjects: MockSubjects[] = [
     id: 'asdgb324',
     name: 'Analízis 1 informatikusoknak',
     exp: 300,
-    subscriptedUsers: []
+    subscriptedUsers: ['abelkalamar']
   },
   {
     id: 'fsdfg6hj',
@@ -23,7 +23,7 @@ export const mock_subjects: MockSubjects[] = [
     id: 'gtfh6744g',
     name: 'Algoritmuselmélet',
     exp: 550,
-    subscriptedUsers: []
+    subscriptedUsers: ['abelkalamar']
   },
   {
     id: 'rtth45h',
@@ -35,7 +35,7 @@ export const mock_subjects: MockSubjects[] = [
     id: 'asdgb324',
     name: 'Valószínűségszámítás',
     exp: 300,
-    subscriptedUsers: []
+    subscriptedUsers: ['abelkalamar']
   },
   {
     id: 'fsdfg6hj',
@@ -47,7 +47,7 @@ export const mock_subjects: MockSubjects[] = [
     id: 'fsfvbfb',
     name: 'Analízis szigorlat informatikusoknak',
     exp: 400,
-    subscriptedUsers: []
+    subscriptedUsers: ['abelkalamar']
   },
   {
     id: 'gtfh6744g',

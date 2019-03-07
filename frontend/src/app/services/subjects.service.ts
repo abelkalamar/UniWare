@@ -17,19 +17,22 @@ export class SubjectsService {
   ) { }
 
   @Output() detailedSubject = new EventEmitter();
+  @Output() mySubjects = new EventEmitter();
 
   private baseURL = environment.baseURL;
+  private subscriptedSubjects: MockSubjects[] = [];
 
   getSubsciptedSubjects() {
     return mock_subjects;
+
   }
 
-  getSubjects(): MockSubjects[] {
-    return mock_subjects;
-    // const headers = new HttpHeaders({
-    //   'uniware-token': localStorage.getItem('jwtToken')
-    // });
-    // return this.http.get<any>(`${this.baseURL}/subject`, { headers });
+  getSubjects(): Observable<any> {
+    // return mock_subjects;
+    const headers = new HttpHeaders({
+      'uniware-token': `Bearer ${localStorage.getItem('jwtToken')}`
+    });
+    return this.http.get<any>(`${this.baseURL}/subject`, { headers });
   }
 
   sendSubjects(subjectIds: String[]) {

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SubjectsService } from '../../services/subjects.service';
-import { MockSubjects } from 'src/app/mock-files/subjects_class';
-import { FilesService } from 'src/app/services/files.service';
-import { MockFiles } from 'src/app/mock-files/file_class';
+import { MockSubjects } from '../../mock-files/subjects_class';
+import { FilesService } from '../../services/files.service';
+import { MockFiles } from '../../mock-files/file_class';
 import { Router } from '@angular/router';
 
 @Component({

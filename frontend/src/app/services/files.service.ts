@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { mock_files } from '../mock-files/mock_files';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { mock_files } from '../mock-files/mock_files';
 
 @Injectable({
   providedIn: 'root'

@@ -27,7 +27,10 @@ export class ManageSubjectsComponent implements OnInit {
   }
 
   getSubjects() {
-    this.subjects = this.service.getSubjects();
+    this.service.getSubjects()
+      .subscribe(result => {
+        this.subjects = result;
+      });
   }
 
   onSubmit() {
