@@ -21,14 +21,14 @@ jobs:
       #     name: Frontend build
       #     command: |
       #       cd frontend && npm install
-      - run: 
-          name: Frontend Lint
-          command: |
-            cd frontend && npm run lint
+      # - run: 
+      #     name: Frontend Lint
+      #     command: |
+      #       cd frontend && npm run lint
       - run: 
           name: Frontend Build
           command: |
-            cd frontend && ng build
+            cd frontend && ng build --aot --prod
       - run:
           name: Deploy Dev to Heroku
           command: |
