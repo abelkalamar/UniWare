@@ -90,6 +90,16 @@ const oneUserController = (req, res) => {
     .catch(error => res.status(500).json(error));
 };
 
+const subscribeSubjectsController = (req, res) => {
+  const { userId } = req.decoded;
+  const { subjects } = req.body;
+  userService.subscribeMoreSubjects(userId, subjects)
+  .then((user) => {
+    res.status(200).json(user);
+  })
+  .catch(error => res.status(500).json(error));
+};
+
 module.exports = {
   registerController,
   loginController,
@@ -98,4 +108,5 @@ module.exports = {
   userSubjectsController,
   allUsersController,
   oneUserController,
+  subscribeSubjectsController,
 };
