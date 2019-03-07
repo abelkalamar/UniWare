@@ -2,7 +2,6 @@ const userService = require('../services/user.service');
 
 const registerController = (req, res) => {
   const { username, password } = req.body;
-  console.log(req.body);
   if (!username || !password) {
     res.status(400).json({
       status: 'error',

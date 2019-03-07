@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -11,11 +11,8 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  registration(data: FormData) {
-    console.log(data);
-    this.http.post<any>(`http://localhost:3000/register`, data)
-      .subscribe(response => {
-        console.log(response);
-      }); 
+  registration(userData: FormData) {
+    return this.http.post<any>(`${this.baseURL}/register`, userData);
   }
+
 }

@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class RegistrationComponent implements OnInit {
 
+  private selectedPicture: File = null;
+
   constructor(
     private fb: FormBuilder,
     private service: AuthService,
@@ -18,8 +20,7 @@ export class RegistrationComponent implements OnInit {
 
   newUser = this.fb.group({
     username: ['', Validators.required],
-    password: ['', Validators.required],
-    profilePicture: [null, Validators.required]
+    password: ['', Validators.required]
   });
 
 
@@ -27,11 +28,22 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.newUser.value);
+    const userData = new FormData();
+    userData.append('username', this.newUser.value.username);
+    userData.append('password', this.newUser.value.password);
+    userData.append('profilePicture', this.selectedPicture[0]);
+    this.service.registration(userData)
+      .subscribe(response => {
+        console.log(response);
+      });
   }
 
-  goToMainPage() { 
+  goToMainPage() {
     this.router.navigate(['/']);
   }
 
+  onFileSelected(event) {
+    this.selectedPicture = event.target.files;
+    console.log(this.selectedPicture);
+  }
 }
