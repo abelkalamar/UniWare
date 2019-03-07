@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { MainComponent } from './components//main/main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ManageSubjectsComponent } from './components/manage-subjects/manage-subjects.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SideBarComponent,
     NavbarComponent,
     RegistrationComponent,
+    ManageSubjectsComponent,
     MainComponent
   ],
   imports: [

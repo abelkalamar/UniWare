@@ -1,0 +1,110 @@
+.container {
+  width: 80%;
+  height: 90%;
+  left: 20%;
+  top: 72px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #505050;
+}
+
+.lists {
+  display: flex;
+}
+
+.subjectForm {
+  width: 50vh;
+}
+
+.allSubjects, .selectedSubjects{
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px 20px;
+  min-width: 400px;
+  max-height: 450px;
+  margin: 0px auto;
+  overflow-y: scroll;
+  cursor: pointer;
+}
+
+
+.allSubjects {
+  margin-right: 50px;
+}
+
+.allSubjects::-webkit-scrollbar,
+.selectedSubjects::-webkit-scrollbar {
+  width: 1em;
+}
+
+.subject {
+  display: flex;
+  margin: 5px;
+  justify-content: space-between;
+}
+
+.subject:hover {
+  border-bottom: 1px solid black;
+}
+
+.subject input{
+  margin-right: 20px;
+}
+
+.subjectName, .subjectExp {
+  font-weight: 600;
+}
+
+.subjectName {
+  margin-right: 30px;
+}
+
+.footer button {
+  padding: 10px;
+  font-size: 15px;
+  max-width: 130px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.footer button {
+  margin: 20px 50px 0px 0px;
+}
+
+label {
+  margin-top: 20px;
+}
+
+.upload:hover,
+.footer button:hover {
+  background-color: rgb(226, 224, 224);
+}
+
+.upload:focus,
+.footer button:focus {
+  outline: none;
+}
+

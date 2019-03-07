@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 
 @Injectable({
@@ -7,16 +10,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private router: Router
+  ) { }
 
-  loginURL = 'http://localhost:3000';
+  private baseURL = environment.baseURL;
 
-  login(loginData: FormData) {
-    return this.http.post<any>(`${this.loginURL}/login`, loginData)
-    .subscribe(data => {
-      console.log(data);
-      localStorage.setItem('jwtToken', data.token);
-    });
+  login(loginData: FormData): Observable<any> {
+    return this.http.post<any>(`${this.baseURL}/login`, loginData);
   }
 
 }
