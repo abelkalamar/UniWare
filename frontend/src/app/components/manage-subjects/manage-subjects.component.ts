@@ -27,7 +27,7 @@ export class ManageSubjectsComponent implements OnInit {
   }
 
   getSubjects() {
-    this.subjects = this.service.getSubjects();
+    // this.subjects = this.service.getSubjects();
   }
 
   onSubmit() {

@@ -1,5 +1,6 @@
 const express = require('express');
 const auth = require('../middlewares/authorization');
+const subjectController = require('../controllers/subject.controller');
 const multer = require('multer');
 
 
@@ -17,6 +18,8 @@ const upload = multer({ storage: storage });
 const userController = require('../controllers/user.controller');
 
 const router = express.Router();
+
+// router.get('/subject', auth.authorizeUser, subjectController.getSubjects),
 
 router.post('/register', upload.single('profilePicture'), userController.registerController);
 
