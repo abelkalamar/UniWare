@@ -10,8 +10,8 @@ import { MockSubjects } from 'src/app/mock-files/subjects_class';
 })
 export class ManageSubjectsComponent implements OnInit {
 
-  private subjects: MockSubjects[] = [];
-  private selectedSubjects: MockSubjects[] = [];
+   subjects: MockSubjects[] = [];
+   selectedSubjects: MockSubjects[] = [];
 
   constructor(
     private router: Router,
