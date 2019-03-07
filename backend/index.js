@@ -31,6 +31,7 @@ mongoose.connection.once('open', () => {
 });
 
 app.use(express.json());
+app.use('/static', express.static('static'))
 
 const services = require('./routes/index');
 
