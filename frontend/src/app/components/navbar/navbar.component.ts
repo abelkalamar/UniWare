@@ -31,7 +31,7 @@ export class NavbarComponent implements OnInit {
     this.service.login(this.loginData.value)
       .subscribe(data => {
         localStorage.setItem('jwtToken', data.token);
-        this.router.navigate(['/main'])
+        this.router.navigate(['/main']);
         this.currentUser = data.user;
         console.log(this.currentUser);
       });
