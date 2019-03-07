@@ -22,7 +22,7 @@ router.get('/subject', auth.authorizeUser, subjectController.getSubjects);
 
 router.post('/subject', auth.authorizeUser, subjectController.postSubjects);
 
-router.get('/subject/search', auth.authorizeUser, subjectController.searchSubjects );
+router.get('/subject/search', auth.authorizeUser, subjectController.searchSubjects);
 
 router.post('/subject/file', auth.authorizeUser, upload.single('path'), subjectController.postFiles);
 
@@ -41,5 +41,7 @@ router.get('/users', auth.authorizeUser, userController.allUsersController);
 router.get('/auth', auth.authorizeUser, userController.authorizationController);
 
 router.post('/user', auth.authorizeUser, userController.oneUserController);
+
+router.post('/subscribemore', auth.authorizeUser, userController.subscribeSubjectsController);
 
 module.exports = router;

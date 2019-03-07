@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const PORT = 8080;
+const PORT = 3000;
 const path = require('path');
 const express = require('express');
 
@@ -9,7 +9,7 @@ const cors = require('cors');
 
 app.use(express.static('./dist'));
 
-app.get('/*', function(req,res) {
+app.get('/', function(req,res) {
     
   res.sendFile(path.join(__dirname,'./dist/index.html'));
 });

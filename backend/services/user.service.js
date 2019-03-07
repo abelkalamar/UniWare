@@ -101,6 +101,13 @@ const getUserById = userId => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
+const subscribeMoreSubjects = (userId, subjects) => new Promise((resolve, reject) => {
+  User.findOneAndUpdate({ _id: userId },
+    { $push: { subjects: { $each: subjects } } }, { new: true })
+    .then((user) => resolve(user))
+    .catch(err => reject(err));
+});
+
 module.exports = {
   postUser,
   postLogin,
@@ -108,4 +115,5 @@ module.exports = {
   getUserSubjects,
   getAllUsers,
   getUserById,
+  subscribeMoreSubjects,
 };
