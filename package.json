@@ -2,11 +2,13 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "web.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "npm run lint -- --fix",
+    "start": "cd backend && node index.js",
+    "web": "node index.js"
   },
-  
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -15,11 +17,11 @@
     "jsonwebtoken": "^8.5.0",
     "mongoose": "^5.4.17",
     "multer": "^1.4.1",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "cors": "^2.8.5"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
-    "cors": "^2.8.5",
     "eslint": "^5.15.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.16.0",
