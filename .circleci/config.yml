@@ -29,10 +29,10 @@ jobs:
           name: Backend build
           command: |
             cd backend && npm install
-      - run: 
-          name: Backend start
-          command: |
-            cd backend && npm start
+      # - run: 
+      #     name: Backend start
+      #     command: |
+      #       cd backend && npm start
       - run:
           name: Deploy Dev to Heroku
           command: |
