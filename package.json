@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --ext .js",
     "lint:fix": "npm run lint -- --fix",
-    "start": "cd backend && nodemon index.js",
+    "start": "nodemon index.js",
     "web": "node index.js"
   },
   "author": "",
