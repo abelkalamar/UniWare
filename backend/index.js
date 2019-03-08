@@ -18,7 +18,7 @@ app.use(cors());
 
 const mongoose = require('mongoose');
 
-mongoose.connect(`mongodb+srv://UniWare:${process.env.DB_PASSWORD}@cluster0-qqnoc.mongodb.net/uni`,
+mongoose.connect(`mongodb+srv://UniWare:1234@cluster0-qqnoc.mongodb.net/uni`,
   {
     useNewUrlParser: true,
     useCreateIndex: true,

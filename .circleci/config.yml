@@ -13,10 +13,10 @@ jobs:
       #     name: Backend Lint
       #     command: |
       #       cd backend && npm run lint
-      # - run: 
-      #     name: Frontend build
-      #     command: |
-      #       cd frontend && npm run build
+      - run: 
+          name: Frontend build
+          command: |
+            cd frontend && npm install
       # - run: 
       #     name: Frontend Lint
       #     command: |
